@@ -1,6 +1,8 @@
 header{
-    width: 100%;
-    margin-bottom: 6rem;
+    position: fixed;
+    top: 0;
+    width: 1280px;
+    padding: 50px 20px;
 
     & .logo{
         display: flex;

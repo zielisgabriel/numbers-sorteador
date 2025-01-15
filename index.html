@@ -26,33 +26,68 @@
 </head>
 <body>
     <div class="container-limit">
-        <div>
-            <header>
-                <div class="logo">
-                    <img src="./src/assets/images/icons/Frame.svg" alt="Ícone da logo">
-                    <h1>NUMBERS</h1>
-                </div>
-            </header>
+        <header>
+            <div class="logo">
+                <img src="./src/assets/images/icons/Frame.svg" alt="Ícone da logo">
+                <h1>NUMBERS</h1>
+            </div>
+        </header>
 
-            <main>
-                <div class="info-container">
-                    <h3>ONLINE - GRATUITO</h3>
-                    <h1>SORTEADOR<br>DE NÚMEROS</h1>
-                    <div class="info">
-                        <div>
-                            <img src="./src/assets/images/icons/Comunication.svg" alt="Ícone de informação">
-                            <span>Como funciona o sorteador de números?</span>
-                            <p>O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
-                        </div>
-                        <div>
-                            <img src="./src/assets/images/icons/Comunication.svg" alt="Ícone de informação">
-                            <span>Posso escolher o intervalo dos números?</span>
-                            <p>Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
-                        </div>
+        <main>
+            <div class="info-container">
+                <h3>ONLINE - GRATUITO</h3>
+                <h1>SORTEADOR<br>DE NÚMEROS</h1>
+                <div class="info">
+                    <div>
+                        <img src="./src/assets/images/icons/Comunication.svg" alt="Ícone de informação">
+                        <span>Como funciona o sorteador de números?</span>
+                        <p>O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
+                    </div>
+                    <div>
+                        <img src="./src/assets/images/icons/Comunication.svg" alt="Ícone de informação">
+                        <span>Posso escolher o intervalo dos números?</span>
+                        <p>Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
                     </div>
                 </div>
-            </main>
-        </div>
+            </div>
+
+            <div class="area-number-draw">
+                <div>
+                    <h3>QUERO SORTEAR</h3>
+                    <p>defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+                </div>
+                <form>
+                    <div class="inputs">
+                        <div class="number-of-draws">
+                            <label for="numbers">NÚMEROS</label>
+                            <input type="text" name="numbers" id="numbers" placeholder="0">
+                        </div>
+                        <div class="number-of-draws">
+                            <label for="number-min">DE</label>
+                            <input type="text" name="number-min" id="number-min" placeholder="0">
+                        </div>
+                        <div class="number-of-draws">
+                            <label for="number-max">DE</label>
+                            <input type="text" name="number-max" id="number-max" placeholder="0">
+                        </div>
+                    </div>
+
+                    <div class="repeat-switch">
+                        <input type="checkbox" name="repeat" id="repeat">
+                        <label for="repeat">
+                            <div class="switch">
+                                <div class="switch-circle"></div>
+                            </div>
+                            <p>Não repetir número</p>
+                        </label>
+                    </div>
+
+                    <button type="submit">
+                        SORTEAR
+                    </button>
+                </form>
+            </div>
+        </main>
     </div>
 </body>
 </html>

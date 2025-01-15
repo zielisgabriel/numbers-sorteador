@@ -1,4 +1,11 @@
 .container-limit{
     max-width: 1280px;
+    height: 100%;
+    padding-inline: 15px;
     margin: auto;
+
+    &>div{
+        height: 100%;
+        width: 100%;
+    }
 }
