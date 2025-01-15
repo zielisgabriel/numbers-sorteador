@@ -15,10 +15,42 @@ inputTratament(numbers)
 inputTratament(numberMin)
 inputTratament(numberMax)
 
-function createElement({ resultNumbersDraw, numberForRepeat, min, max }){
-    if(numberForRepeat > 0){
-        for(let i = 0; i <= numberForRepeat ?? 0; i++){
+function noRepeatResult({ resultNumbersDraw, numberForRepeat, min, max }){
+    for(let i = 0; i <= numberForRepeat; i++){
+        if(i > 0){
+            let randomNumber = randomNumberInterval(min ?? null, max ?? null)
+            
+            if(resultNumbersDraw.includes(randomNumber)){
+                randomNumber = null
+                i--
+            } else {
+                resultNumbersDraw.push(randomNumber)
+            }
+
+        } else {
             resultNumbersDraw.push(randomNumberInterval(min ?? null, max ?? null))
+        }
+    }
+
+    for (const element of resultNumbersDraw) {
+        const li = document.createElement('li')
+        const span = document.createElement('span')
+
+        span.textContent = element
+        li.append(span)
+        listResultNum.append(li)
+    }
+}
+
+function createElement({ resultNumbersDraw, numberForRepeat, min, max }){
+
+    if(repeat.checked){
+        noRepeatResult({ resultNumbersDraw, numberForRepeat, min, max })
+    } else {
+        if(numberForRepeat > 0){
+            for(let i = 0; i <= numberForRepeat ?? 0; i++){
+                resultNumbersDraw.push(randomNumberInterval(min ?? null, max ?? null))
+            }
         }
     }
 
@@ -41,7 +73,11 @@ form.addEventListener('submit', (e) => {
     const max = Number(numberMax.value) + 1
     const numberForRepeat = Number(numbers.value - 1)
 
-    createElement({ resultNumbersDraw, numberForRepeat, min, max })
+    if(repeat.checked){
+        noRepeatResult({ resultNumbersDraw, numberForRepeat, min, max })
+    } else {
+        createElement({ resultNumbersDraw, numberForRepeat, min, max })
+    }
 
     resultNumbersDraw = []
 
