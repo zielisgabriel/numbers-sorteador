@@ -20,19 +20,40 @@ form.addEventListener('submit', (e) => {
 
     const min = Number(numberMin.value) - 1
     const max = Number(numberMax.value) + 1
-    const numberForRepeat = Number(numbers.value)
+    const numberForRepeat = Number(numbers.value - 1)
 
     for(let i = 0; i <= numberForRepeat; i++){
-        console.log(randomNumberInterval(min, max))
+        const li = document.createElement('li')
+        const span = document.createElement('span')
+        span.textContent = randomNumberInterval(min, max)
+        li.append(span)
+        listResultNum.append(li)
     }
+
+    setTimeout(() => {
+        areaNumberDraw.style.opacity = '0'
+        setTimeout(() => {
+            areaNumberDraw.style.display = 'none'
+            areaResult.style.display = 'block'
+            setTimeout(() => {
+                areaResult.style.opacity = '1'
+            }, 10)
+        }, 500)
+    }, 500)
 })
 
 returnBtn.addEventListener('click', () => {
+    for (let i = 0; i < listResultNum.childElementCount; i++) {
+        listResultNum.removeChild(i)
+        console.log(listResultNum)
+    }
+
     setTimeout(() => {
         areaResult.style.opacity = '0'
         setTimeout(() => {
             areaResult.style.display = 'none'
             areaNumberDraw.style.display = 'flex'
+
             setTimeout(() => {
                 areaNumberDraw.style.opacity = '1'
             }, 10)
