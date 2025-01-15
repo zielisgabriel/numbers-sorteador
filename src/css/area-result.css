@@ -21,10 +21,14 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        margin-bottom: 40px;
 
         & li{
             width: 84px;
             height: 84px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 1rem;
 
             & span{
