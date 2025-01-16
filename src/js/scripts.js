@@ -26,7 +26,6 @@ function noRepeatResult({ resultNumbersDraw, numberForRepeat, min, max }){
             } else {
                 resultNumbersDraw.push(randomNumber)
             }
-
         } else {
             resultNumbersDraw.push(randomNumberInterval(min ?? null, max ?? null))
         }
@@ -74,9 +73,20 @@ form.addEventListener('submit', (e) => {
     const numberForRepeat = Number(numbers.value - 1)
 
     if(repeat.checked){
+        if(((max - 1) - (min + 1)) < (numberForRepeat + 1)){
+            return window.alert('Digíte um valor maior.')
+        }
+
+        if(max - 1 < numberForRepeat + 1){
+            return window.alert('Digíte um número válido.')
+        }
         noRepeatResult({ resultNumbersDraw, numberForRepeat, min, max })
     } else {
         createElement({ resultNumbersDraw, numberForRepeat, min, max })
+    }
+
+    if(min + 1 >= max - 1){
+        return window.alert('Número mínimo é maior que o número máximo.')
     }
 
     resultNumbersDraw = []
