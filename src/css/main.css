@@ -68,17 +68,17 @@ main{
         & form{
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 1.25rem;
 
             & .inputs{
                 display: flex;
-                gap: 12px;
+                gap: 0.75rem;
 
                 & .number-of-draws{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 8px;
+                    gap: 0.5rem;
 
                     & label{
                         font: var(--size-roboto-flex-label-md);
@@ -86,9 +86,9 @@ main{
                     }
 
                     & input{
-                        width: 86px;
-                        height: 56px;
-                        border-radius: 8px;
+                        width: 5.37rem;
+                        height: 3.5rem;
+                        border-radius: 0.5rem;
                         border: none;
                         outline: none;
                         text-align: center;
@@ -115,9 +115,11 @@ main{
                 }
 
                 & label{
+                    margin-top: 1rem;
                     cursor: pointer;
                     display: flex;
-                    gap: 8px;
+                    gap: 0.5rem;
+                    align-items: center;
 
                     & .switch{
                         width: 30px;
@@ -157,6 +159,29 @@ main{
                     background-color: var(--background-secondary);
                     border: 4px solid var(--content-brand);
                 }
+            }
+        }
+    }
+}
+
+@media(max-width: 1200px){
+    main{
+        gap: 10px;
+    }
+}
+
+@media(max-width: 1000px){
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 400px){
+    main{
+        & .info-container{
+            & h1{
+                font-size: 11vw;
             }
         }
     }

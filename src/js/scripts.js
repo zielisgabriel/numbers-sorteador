@@ -74,11 +74,11 @@ form.addEventListener('submit', (e) => {
 
     if(repeat.checked){
         if(((max - 1) - (min + 1)) < (numberForRepeat + 1)){
-            return window.alert('Digíte um valor maior.')
+            return window.alert('Digíte um valor maior. Digite novamente.')
         }
 
         if(max - 1 < numberForRepeat + 1){
-            return window.alert('Digíte um número válido.')
+            return window.alert('Digíte um número válido. Digite novamente.')
         }
         noRepeatResult({ resultNumbersDraw, numberForRepeat, min, max })
     } else {
@@ -86,7 +86,11 @@ form.addEventListener('submit', (e) => {
     }
 
     if(min + 1 >= max - 1){
-        return window.alert('Número mínimo é maior que o número máximo.')
+        return window.alert('Número mínimo é maior ou igual ao número máximo. Digite novamente.')
+    }
+
+    if((numberForRepeat + 1) === 0){
+        return window.alert('Digite a quantidade de sorteios que deseja. Digite novamente.')
     }
 
     resultNumbersDraw = []

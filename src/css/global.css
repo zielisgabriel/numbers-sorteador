@@ -93,3 +93,23 @@ body{
         background: linear-gradient(transparent, #000);
     }
 }
+
+@media(max-width: 1000px){
+    body{
+        height: auto;
+        padding: 20px 5px;
+    }
+}
+
+@media(max-width: 550px){
+    :root{
+        font-size: 10px;
+    }
+}
+
+@media(max-height: 650px){
+    body{
+        height: auto;
+        padding: 20px 2px;
+    }
+}
